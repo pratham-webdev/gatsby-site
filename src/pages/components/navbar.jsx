@@ -19,8 +19,9 @@ function Nav(){
     )
 }
 
+
 function createNavItems(navitem){
-    return <Link className="nav-link" activeClassName="active" href={navitem.link}>{navitem.name}</Link>
+    return <Link className="nav-link" activeClassName="active" to={navitem.link}>{navitem.name}</Link>
 }
 
 const navItems = [
