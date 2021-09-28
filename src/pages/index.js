@@ -1,15 +1,24 @@
 import React from "react";
 import Main from "./components/main";
-
-const mainPage = {
-  title:"Home",
-  desc:"I'm making this by following the Gatsby Tutorial."
-}
+import { graphql, useStaticQuery } from "gatsby";
+import Images from "./components/images";
 
 const IndexPage = () => {
-  return(
-    <Main title={mainPage.title} desc={mainPage.desc}/>
-  )
-}
+  const mainPage = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+        }
+      }
+    }
+  `);
+  return (<div>
+    <Main title={mainPage.site.siteMetadata.title} desc={mainPage.site.siteMetadata.description} />
+  <Images />
+  </div>)
+
+};
 
 export default IndexPage;
