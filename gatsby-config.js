@@ -4,7 +4,7 @@ module.exports = {
     title: "My Gatsby Site",
     description:"This is a description"
   },
-  plugins: ["gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", "gatsby-plugin-image","gatsby-plugin-sharp", 
+  plugins: ["gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", "gatsby-plugin-image","gatsby-plugin-sharp",
   {
     resolve: "gatsby-source-filesystem",
     options: {
@@ -12,6 +12,7 @@ module.exports = {
       path: `${__dirname}/blog`,
     }
   },
-  `gatsby-plugin-mdx`
+  `gatsby-plugin-mdx`,
+  "gatsby-transformer-sharp"
 ],
 };
